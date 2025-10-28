@@ -1,0 +1,21 @@
+# College Event Crowdsourcing Platform - Database Configuration
+# 
+# If you get database connection errors, update the password in:
+# src/main/java/com/college/eventcrowdsourcing/database/DatabaseManager.java
+# 
+# Common MySQL password scenarios:
+# 1. No password: DB_PASSWORD = "";
+# 2. Password "root": DB_PASSWORD = "root";
+# 3. Password "password": DB_PASSWORD = "password";
+# 4. Custom password: DB_PASSWORD = "your_password";
+#
+# To test your MySQL connection manually:
+# mysql -u root -p
+# (enter your password when prompted)
+#
+# If MySQL asks for a password and you don't know it:
+# 1. Try empty password (just press Enter)
+# 2. Try "root" as password
+# 3. Try "password" as password
+# 4. Check your MySQL installation documentation
+

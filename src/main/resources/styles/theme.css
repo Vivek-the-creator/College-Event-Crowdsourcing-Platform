@@ -1,0 +1,406 @@
+/* Dark Theme for College Event Crowdsourcing Platform */
+
+.root {
+    -color-bg-primary: #181E2A;
+    -color-bg-secondary: #22283A;
+    -color-card: #6E7BA1;
+    -color-primary: #395AFF;
+    -color-accent: #0ED2F7;
+    -color-text-primary: #FFFFFF;
+    -color-text-secondary: #A5B4E0;
+    -color-sidebar: #23304C;
+    -color-sidebar-active: #395AFF;
+    -color-logout: #DF2B2B;
+    -color-border: #394164;
+    -color-success: #1CB47E;
+    -color-warning: #FFB62C;
+    -color-error: #E44B4B;
+    
+    -fx-background-color: #181E2A;
+    -fx-text-fill: -color-text-primary;
+    -fx-font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+BorderPane {
+    -fx-background-color: #181E2A;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: -color-sidebar;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text-secondary;
+    -fx-alignment: center-left;
+    -fx-padding: 12px 16px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: derive(-color-bg-secondary, 10%);
+}
+
+.sidebar-button.active {
+    -fx-background-color: -color-sidebar-active;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Cards */
+.card {
+    -fx-background-color: #1E2A45;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0, 0, 2);
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 16, 0, 0, 4);
+}
+
+/* Stat Tiles */
+.stat-tile {
+    -fx-background-color: #1E2A45;
+    -fx-background-radius: 10px;
+    -fx-padding: 24px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0, 0, 2);
+}
+
+.stat-tile:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 16, 0, 0, 4);
+}
+
+.stat-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-primary;
+}
+
+.stat-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* Buttons */
+.button-primary {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px 24px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: derive(-color-primary, 10%);
+}
+
+.button-secondary {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px 24px;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: derive(-color-bg-secondary, 10%);
+}
+
+.button-danger {
+    -fx-background-color: -color-logout;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px 24px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.button-danger:hover {
+    -fx-background-color: derive(-color-logout, -10%);
+}
+
+/* Logout Button */
+#logoutButton {
+    -fx-background-color: -color-logout;
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px 16px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+#logoutButton:hover {
+    -fx-background-color: derive(-color-logout, -10%);
+}
+
+/* Text Fields */
+.text-field, .text-area {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: -color-primary;
+    -fx-border-width: 2px;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px;
+}
+
+.combo-box .list-view {
+    -fx-background-color: -color-bg-secondary;
+    -fx-border-color: -color-border;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: -color-primary;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+    -fx-padding: 12px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.list-cell:hover {
+    -fx-background-color: derive(-color-bg-secondary, 5%);
+}
+
+.list-cell:selected {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: -color-text-primary;
+}
+
+.heading-1 {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-primary;
+}
+
+.heading-2 {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-primary;
+}
+
+.heading-3 {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: -color-text-primary;
+}
+
+.body {
+    -fx-font-size: 16px;
+    -fx-text-fill: -color-text-primary;
+}
+
+.meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+.caption {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* Headers */
+.header {
+    -fx-background-color: -color-bg-secondary;
+    -fx-padding: 16px 24px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Activity Rows */
+.activity-row {
+    -fx-background-color: -color-bg-secondary;
+    -fx-padding: 16px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-cursor: hand;
+}
+
+.activity-row:hover {
+    -fx-background-color: derive(-color-bg-secondary, 5%);
+}
+
+/* Chips/Badges */
+.chip {
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+
+.chip-tech {
+    -fx-background-color: rgba(57, 90, 255, 0.2);
+    -fx-text-fill: #6B8EFF;
+}
+
+.chip-cultural {
+    -fx-background-color: rgba(238, 75, 75, 0.2);
+    -fx-text-fill: #FF8E8E;
+}
+
+.chip-education {
+    -fx-background-color: rgba(28, 180, 126, 0.2);
+    -fx-text-fill: #4FDF9F;
+}
+
+.chip-professional {
+    -fx-background-color: rgba(255, 182, 44, 0.2);
+    -fx-text-fill: #FFD666;
+}
+
+/* Toggle Buttons */
+.toggle-button {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-secondary;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.toggle-button:selected {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-border-color: -color-primary;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: #141A2B;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: -color-bg-secondary;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -color-border;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: derive(-color-border, 10%);
+}
+
+/* TabPane */
+.tab-pane {
+    -fx-background-color: -color-bg-secondary;
+}
+
+.tab {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-secondary;
+}
+
+.tab:selected {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+}
+
+/* Alert/Dialog */
+.alert {
+    -fx-background-color: -color-bg-secondary;
+}
+
+.dialog-pane {
+    -fx-background-color: -color-bg-secondary;
+    -fx-text-fill: -color-text-primary;
+}
+
+/* Admin status change context menu */
+.context-menu.admin-status-menu {
+    -fx-background-color: #395AFF;
+    -fx-background-radius: 8px;
+    -fx-padding: 6px 0;
+}
+
+.context-menu.admin-status-menu .menu-item .label {
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+}
+
+.context-menu.admin-status-menu .menu-item {
+    -fx-background-color: transparent;
+    -fx-padding: 8px 16px;
+}
+
+.context-menu.admin-status-menu .menu-item:focused,
+.context-menu.admin-status-menu .menu-item:hover {
+    -fx-background-color: rgba(0,0,0,0.15);
+}
+
+/* Success, Warning, Error states */
+.success {
+    -fx-text-fill: -color-success;
+}
+
+.warning {
+    -fx-text-fill: -color-warning;
+}
+
+.error {
+    -fx-text-fill: -color-error;
+}
+
+/* Focus Ring */
+.focus-ring {
+    -fx-border-color: -color-primary;
+    -fx-border-width: 2px;
+    -fx-border-radius: 6px;
+}

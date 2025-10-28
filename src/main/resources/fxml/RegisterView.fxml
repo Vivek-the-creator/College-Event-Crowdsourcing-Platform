@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.eventcrowdsourcing.controller.RegisterController">
+   <left>
+      <!-- Left Side - Registration Form -->
+      <VBox alignment="CENTER" spacing="25.0" style="-fx-background-color: #1E2A45; -fx-padding: 40;" prefWidth="500.0">
+         <children>
+            <!-- Logo and Title -->
+            <VBox alignment="CENTER" spacing="8.0">
+               <children>
+                  <StackPane>
+                     <Circle radius="35.0" fill="#1E88E5" />
+                     <Label text="CECP" textFill="WHITE" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                  </StackPane>
+                  <Label text="Create Your Account" textFill="#395AFF">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label text="Join the campus community" style="-fx-text-fill: #A5B4E0;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <!-- Registration Form -->
+            <VBox alignment="CENTER" spacing="15.0" prefWidth="380.0">
+               <children>
+                  <TextField fx:id="nameField" promptText="Full Name" prefWidth="380.0" prefHeight="42.0" 
+                             style="-fx-background-color: #F5F7FA; -fx-border-color: #E0E0E0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  
+                  <TextField fx:id="emailField" promptText="Email Address" prefWidth="380.0" prefHeight="42.0" 
+                             style="-fx-background-color: #F5F7FA; -fx-border-color: #E0E0E0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  
+                  <PasswordField fx:id="passwordField" promptText="Password" prefWidth="380.0" prefHeight="42.0" 
+                                 style="-fx-background-color: #F5F7FA; -fx-border-color: #E0E0E0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </PasswordField>
+                  
+                  <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password" prefWidth="380.0" prefHeight="42.0" 
+                                 style="-fx-background-color: #F5F7FA; -fx-border-color: #E0E0E0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </PasswordField>
+                  
+                  <ComboBox fx:id="roleComboBox" promptText="Select Your Role" prefWidth="380.0" prefHeight="42.0" 
+                            style="-fx-background-color: #F5F7FA; -fx-border-color: #E0E0E0; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;">
+                  </ComboBox>
+                  
+                  <Button fx:id="registerButton" onAction="#handleRegister" text="Create Account" 
+                          style="-fx-background-color: #1E88E5; -fx-text-fill: white; -fx-pref-width: 380.0; -fx-pref-height: 42.0; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;">
+                  </Button>
+                  
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <Label text="Already have an account?" style="-fx-text-fill: #A5B4E0;">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Label>
+                     <Hyperlink fx:id="backLink" onAction="#handleBack" text="Sign In" style="-fx-text-fill: #395AFF; -fx-font-size: 13px; -fx-font-weight: bold;">
+                        <font>
+                           <Font size="13.0" />
+                        </font>
+                     </Hyperlink>
+                  </HBox>
+                  
+                  <Label fx:id="statusLabel" textAlignment="CENTER" style="-fx-text-fill: #E44B4B;" wrapText="true">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   
+   <center>
+      <!-- Right Side - Branding -->
+      <VBox alignment="CENTER" spacing="40.0" style="-fx-background-color: #181E2A;">
+         <children>
+            <VBox alignment="CENTER" spacing="25.0">
+               <children>
+                  <StackPane>
+                     <Circle radius="90.0" fill="#395AFF" />
+                     <Label text="CECP" textFill="WHITE">
+                        <font>
+                           <Font name="System Bold" size="40.0" />
+                        </font>
+                     </Label>
+                  </StackPane>
+                  <Label text="Welcome to CECP!" textFill="WHITE" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label text="Start your journey today" textFill="WHITE" textAlignment="CENTER" style="-fx-opacity: 0.9;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-padding: 30;">
+               <children>
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="🎯" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Propose innovative campus events" textFill="WHITE" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="🤝" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Collaborate with students &amp; faculty" textFill="WHITE" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="💡" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Share your skills &amp; resources" textFill="WHITE" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="15.0" alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="🏆" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Climb the leaderboard &amp; earn points" textFill="WHITE" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 20;">
+               <children>
+                  <Label text="Building a Better Campus Together" textFill="WHITE" textAlignment="CENTER" style="-fx-opacity: 0.9;">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

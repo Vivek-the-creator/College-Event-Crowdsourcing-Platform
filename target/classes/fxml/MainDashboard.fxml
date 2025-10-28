@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.eventcrowdsourcing.controller.MainDashboardController" style="-fx-background-color: #181E2A;">
+   <left>
+      <!-- Sidebar Navigation -->
+      <VBox prefWidth="260.0" styleClass="sidebar">
+         <children>
+            <!-- Logo Section -->
+            <VBox alignment="CENTER" spacing="8.0" style="-fx-background-color: #0F172A; -fx-padding: 24;">
+               <children>
+                  <StackPane>
+                     <Circle radius="32.0" fill="#2563EB" />
+                     <Label text="CECP" textFill="WHITE" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                  </StackPane>
+                  <Label text="Event Platform" textFill="#94A3B8" textAlignment="CENTER" style="-fx-font-size: 12px;" />
+               </children>
+            </VBox>
+            
+            <!-- User Info -->
+            <VBox spacing="8.0" style="-fx-padding: 16;">
+               <children>
+                  <Label fx:id="userInfoLabel" textFill="WHITE" style="-fx-font-size: 14px; -fx-font-weight: 600;">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userRoleLabel" textFill="#94A3B8" style="-fx-font-size: 12px;" />
+               </children>
+            </VBox>
+            
+            <Separator style="-fx-background-color: #334155;" />
+            
+            <!-- Navigation Menu -->
+            <VBox spacing="4.0" style="-fx-padding: 16;">
+               <children>
+                  <Label text="EVENTS" style="-fx-font-size: 11px; -fx-font-weight: 600; -fx-text-fill: -color-text-secondary; -fx-padding: 0 0 8 0;">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  
+                  <Button fx:id="dashboardButton" onAction="#showDashboard" text="Dashboard" styleClass="sidebar-button">
+                     <graphic>
+                        <Label text="📊" style="-fx-font-size: 16px;" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  
+                  <Button fx:id="eventsButton" onAction="#showEvents" text="Browse Events" styleClass="sidebar-button">
+                     <graphic>
+                        <Label text="🎯" style="-fx-font-size: 16px;" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  
+                  <Button fx:id="proposeButton" onAction="#showProposeEvent" text="Propose Event" styleClass="sidebar-button">
+                     <graphic>
+                        <Label text="➕" style="-fx-font-size: 16px;" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  
+                  <Button fx:id="contributionsButton" onAction="#showContributions" text="My Contributions" styleClass="sidebar-button">
+                     <graphic>
+                        <Label text="💼" style="-fx-font-size: 16px;" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  
+                  <VBox spacing="4.0" visible="false">
+                     <children>
+                        <Label text="ADMIN" style="-fx-font-size: 11px; -fx-font-weight: 600; -fx-text-fill: -color-text-secondary; -fx-padding: 16 0 8 0;">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="adminButton" onAction="#showAdminPanel" text="Admin Panel" styleClass="sidebar-button">
+                           <graphic>
+                              <Label text="⚙️" style="-fx-font-size: 16px;" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <!-- Logout Button -->
+            <VBox spacing="8.0" style="-fx-padding: 16;">
+               <children>
+                  <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" styleClass="sidebar-button">
+                     <graphic>
+                        <Label text="🚪" style="-fx-font-size: 16px;" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   
+   <top>
+      <!-- Header -->
+      <HBox alignment="CENTER_LEFT" styleClass="header">
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label fx:id="pageTitleLabel" text="Dashboard" styleClass="heading-2" />
+                  <Label fx:id="pageSubtitleLabel" text="Welcome back! Here's what's happening." styleClass="meta" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   
+   <center>
+      <!-- Main Content Area with ScrollPane -->
+      <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+         <content>
+            <VBox spacing="24.0" style="-fx-padding: 24; -fx-background-color: #141A2B; -fx-min-height: 800;">
+               <children>
+                  <!-- KPI Stats Grid -->
+                  <GridPane fx:id="statsGrid" hgap="24.0" vgap="24.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                     </columnConstraints>
+                     <children>
+                        <!-- Points Stat Tile -->
+                        <VBox fx:id="pointsStatTile" GridPane.columnIndex="0" styleClass="stat-tile">
+                           <children>
+                              <Label text="🏆" style="-fx-font-size: 32px; -fx-padding: 0 0 8 0;" />
+                              <Label fx:id="pointsLabel" text="0" styleClass="stat-value" />
+                              <Label text="Campus Points" styleClass="stat-label" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Proposed Events Stat Tile -->
+                        <VBox fx:id="proposedStatTile" GridPane.columnIndex="1" styleClass="stat-tile">
+                           <children>
+                              <Label text="📝" style="-fx-font-size: 32px; -fx-padding: 0 0 8 0;" />
+                              <Label fx:id="proposedEventsLabel" text="0" styleClass="stat-value" />
+                              <Label text="Events Proposed" styleClass="stat-label" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Contributions Stat Tile -->
+                        <VBox fx:id="contributionsStatTile" GridPane.columnIndex="2" styleClass="stat-tile">
+                           <children>
+                              <Label text="💼" style="-fx-font-size: 32px; -fx-padding: 0 0 8 0;" />
+                              <Label fx:id="contributionsLabel" text="0" styleClass="stat-value" />
+                              <Label text="Contributions" styleClass="stat-label" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+                  
+                  <!-- Activity List -->
+                  <VBox styleClass="card" style="-fx-padding: 24; -fx-min-height: 400;">
+                     <children>
+                        <!-- Activity Header -->
+                        <HBox alignment="CENTER_LEFT" spacing="16.0" style="-fx-padding: 0 0 16 0;">
+                           <children>
+                              <Label text="Recent Activity" styleClass="heading-3" />
+                              <Region HBox.hgrow="ALWAYS" />
+                              <ToggleButton text="All" selected="true" styleClass="toggle-button" />
+                              <ToggleButton text="Mine" styleClass="toggle-button" />
+                           </children>
+                        </HBox>
+                        
+                        <!-- Activity List -->
+                        <ListView fx:id="recentActivityList" style="-fx-background-color: transparent; -fx-border-color: transparent;" prefHeight="300.0" />
+                     </children>
+                  </VBox>
+                  
+                  <!-- Hidden Content Panes -->
+                  <StackPane fx:id="contentStack" visible="false" managed="false" style="-fx-background-color: #1E2A45;">
+                     <children>
+                        <!-- Events Content -->
+                        <VBox fx:id="eventsContent" spacing="20.0" visible="false">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                 <children>
+                                    <Label text="Filter:" styleClass="meta" />
+                                    <ComboBox fx:id="statusFilterComboBox" promptText="All Statuses" prefWidth="180.0" />
+                                    <Button fx:id="refreshEventsButton" onAction="#refreshEvents" text="Refresh" styleClass="button-primary" />
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="eventsList" prefHeight="600.0" styleClass="card" style="-fx-border-width: 0; -fx-padding: 16;" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Propose Event Content -->
+                        <VBox fx:id="proposeEventContent" spacing="20.0" visible="false">
+                           <children>
+                              <VBox styleClass="card" spacing="20.0" style="-fx-padding: 24;">
+                                 <children>
+                                    <TextField fx:id="eventTitleField" promptText="Event Title" prefWidth="600.0" prefHeight="42.0" style="-fx-font-size: 14px;" />
+                                    <TextArea fx:id="eventDescriptionField" promptText="Event Description" prefHeight="120.0" prefWidth="600.0" wrapText="true" style="-fx-font-size: 14px;" />
+                                    
+                                    <GridPane hgap="16.0" vgap="16.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="150.0" />
+                                       </columnConstraints>
+                                       <children>
+                                          <VBox GridPane.columnIndex="0" spacing="4.0">
+                                             <Label text="Category" styleClass="caption" />
+                                             <ComboBox fx:id="eventCategoryComboBox" prefWidth="180.0" prefHeight="36.0" />
+                                          </VBox>
+                                          <VBox GridPane.columnIndex="1" spacing="4.0">
+                                             <Label text="Budget Estimate" styleClass="caption" />
+                                             <TextField fx:id="budgetEstimateField" promptText="0.00" prefHeight="36.0" />
+                                          </VBox>
+                                          <VBox GridPane.columnIndex="2" spacing="4.0">
+                                             <Label text="Target Funds" styleClass="caption" />
+                                             <TextField fx:id="targetFundsField" promptText="0.00" prefHeight="36.0" />
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                    
+                                    <TextField fx:id="eventLocationField" promptText="Event Location" prefWidth="600.0" prefHeight="42.0" style="-fx-font-size: 14px;" />
+                                    
+                                    <Button fx:id="submitEventButton" onAction="#submitEvent" text="Submit Event Proposal" styleClass="button-primary" style="-fx-pref-width: 250; -fx-pref-height: 45;" />
+                                    
+                                    <Label fx:id="eventStatusLabel" style="-fx-text-fill: -color-error; -fx-font-size: 12px;" wrapText="true" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        
+                        <!-- Contributions Content -->
+                        <VBox fx:id="contributionsContent" spacing="20.0" visible="false">
+                           <children>
+                              <ListView fx:id="contributionsList" prefHeight="650.0" styleClass="card" style="-fx-border-width: 0; -fx-padding: 16;" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Admin Panel Content -->
+                        <VBox fx:id="adminPanelContent" spacing="20.0" visible="false">
+                           <children>
+                              <TabPane prefHeight="650.0" styleClass="card" style="-fx-border-width: 0;">
+                                 <tabs>
+                                    <Tab text="📋 Pending Events" closable="false">
+                                       <content>
+                                          <ListView fx:id="pendingEventsList" prefHeight="600.0" style="-fx-background-color: transparent;" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="📊 All Events" closable="false">
+                                       <content>
+                                          <ListView fx:id="allEventsList" prefHeight="600.0" style="-fx-background-color: transparent;" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="👥 Users" closable="false">
+                                       <content>
+                                          <ListView fx:id="usersList" prefHeight="600.0" style="-fx-background-color: transparent;" />
+                                       </content>
+                                    </Tab>
+                                    <Tab text="📈 Analytics" closable="false">
+                                       <content>
+                                          <VBox spacing="30.0" style="-fx-padding: 24;">
+                                             <children>
+                                                <Label text="Event Categories Distribution" styleClass="heading-3" />
+                                                <PieChart fx:id="categoryChart" prefHeight="300.0" prefWidth="500.0" />
+                                                
+                                                <Label text="Funding Progress" styleClass="heading-3" />
+                                                <BarChart fx:id="fundingChart" prefHeight="300.0" prefWidth="500.0">
+                                                   <xAxis>
+                                                      <CategoryAxis />
+                                                   </xAxis>
+                                                   <yAxis>
+                                                      <NumberAxis />
+                                                   </yAxis>
+                                                </BarChart>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

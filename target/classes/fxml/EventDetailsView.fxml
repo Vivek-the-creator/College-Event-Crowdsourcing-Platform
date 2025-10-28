@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.eventcrowdsourcing.controller.EventDetailsController" style="-fx-background-color: #181E2A;">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #22283A; -fx-padding: 15;">
+         <children>
+            <Button fx:id="backButton" onAction="#handleBack" text="← Back" style="-fx-background-color: #395AFF; -fx-text-fill: white;">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label text="Event Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   
+   <center>
+      <ScrollPane fitToWidth="true" style="-fx-background-color: #181E2A;">
+         <content>
+            <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 20; -fx-background-color: #141A2B;">
+               <children>
+                  <!-- Event Header -->
+                  <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #1E2A45; -fx-padding: 20; -fx-background-radius: 10;">
+                     <children>
+                        <Label fx:id="eventTitleLabel" textAlignment="CENTER" style="-fx-text-fill: white;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Label fx:id="eventStatusLabel" textAlignment="CENTER" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-padding: 5; -fx-background-radius: 5;">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="eventCategoryLabel" textAlignment="CENTER" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 5; -fx-background-radius: 5;">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        
+                        <Label fx:id="eventDescriptionLabel" textAlignment="CENTER" wrapText="true" prefWidth="600.0" style="-fx-text-fill: #A5B4E0;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        
+                        <HBox alignment="CENTER" spacing="30.0">
+                           <children>
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Proposed by:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="proposerLabel" textAlignment="CENTER" style="-fx-text-fill: white;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Event Date:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="eventDateLabel" textAlignment="CENTER" style="-fx-text-fill: white;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Location:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="locationLabel" textAlignment="CENTER" style="-fx-text-fill: white;" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Funding Information -->
+                  <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #1E2A45; -fx-padding: 20; -fx-background-radius: 10;">
+                     <children>
+                        <Label text="Funding Information" textAlignment="CENTER" style="-fx-text-fill: white;">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        
+                        <HBox alignment="CENTER" spacing="30.0">
+                           <children>
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Budget Estimate:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="budgetEstimateLabel" textAlignment="CENTER" style="-fx-text-fill: white;">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Target Funds:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="targetFundsLabel" textAlignment="CENTER" style="-fx-text-fill: white;">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Total Funds:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="totalFundsLabel" textAlignment="CENTER" style="-fx-text-fill: white;">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" spacing="5.0">
+                                 <children>
+                                    <Label text="Progress:" textAlignment="CENTER" style="-fx-text-fill: #A5B4E0;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="fundingProgressLabel" textAlignment="CENTER" style="-fx-text-fill: white;">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <ProgressBar fx:id="fundingProgressBar" prefWidth="400.0" />
+                     </children>
+                  </VBox>
+                  
+                  <!-- Voting and Actions -->
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <Button fx:id="voteButton" onAction="#handleVote" text="Vote for Event" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-pref-width: 150;">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        
+                        <Button fx:id="contributeButton" onAction="#handleContribute" text="Contribute" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-pref-width: 150;">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        
+                        <Label fx:id="voteCountLabel" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  
+                  <!-- Comments Section -->
+                  <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #1E2A45; -fx-padding: 20; -fx-background-radius: 10;">
+                     <children>
+                        <Label text="Comments" textAlignment="CENTER" style="-fx-text-fill: white;">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <TextArea fx:id="commentTextArea" promptText="Add a comment..." prefHeight="60.0" prefWidth="400.0" wrapText="true" />
+                              <Button fx:id="addCommentButton" onAction="#addComment" text="Add Comment" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-pref-width: 120;">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        
+                        <ListView fx:id="commentsList" prefHeight="150.0" prefWidth="600.0" />
+                     </children>
+                  </VBox>
+                  
+                  <!-- Contributions Section -->
+                  <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #1E2A45; -fx-padding: 20; -fx-background-radius: 10;">
+                     <children>
+                        <Label text="Contributions" textAlignment="CENTER" style="-fx-text-fill: white;">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        
+                        <ListView fx:id="contributionsList" prefHeight="150.0" prefWidth="600.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
+
