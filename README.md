@@ -35,6 +35,12 @@ The application uses MySQL with the following main tables:
 - **contributions**: Skills, resources, and funding contributions
 - **event_organizers**: Event management assignments
 
+## Output Screenshots
+
+![Login Page](screenshots/LoginPage.png)
+
+![Student Dashboard](screenshots/StudentDashboard.png)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -234,7 +240,10 @@ For support and questions:
 - Export functionality for reports
 
 ---
-
 **Built with JavaFX, MySQL, and Java 17**
+
+This project is also available at: https://github.com/Vivek-the-creator/College-Event-Crowdsourcing-Platform
+
+
 
 
