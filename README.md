@@ -1,4 +1,4 @@
-# College Event Crowdsourcing Platform
+# College Event Crowdsourcing Platform🎓
 
 A comprehensive JavaFX desktop application that enables students, faculty, and clubs to collaboratively propose, vote, and fund college events. The system includes gamification features, admin management, and real-time analytics.
 
@@ -242,7 +242,6 @@ For support and questions:
 ---
 **Built with JavaFX, MySQL, and Java 17**
 
-This project is also available at: https://github.com/Vivek-the-creator/College-Event-Crowdsourcing-Platform
 
 
 
